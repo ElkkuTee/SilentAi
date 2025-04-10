@@ -1,6 +1,6 @@
 // netlify/functions/chat.js
 export async function handler(event, context) {
-  const API_KEY = process.env.OPENAI_API_KEY;
+  const API_KEY = "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";
   const BASE_URL = "https://models.inference.ai.azure.com/v1/chat/completions";
 
   const { message } = JSON.parse(event.body);
