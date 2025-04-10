@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#chat {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.message {
+  margin: 10px 0;
+}
+
+.user {
+  color: blue;
+}
+
+.bot {
+  color: green;
+}
+
+#input-area {
+  display: flex;
+  padding: 10px;
+  background: #eee;
+}
+
+#message {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#send {
+  padding: 10px 20px;
+  font-size: 16px;
+}
