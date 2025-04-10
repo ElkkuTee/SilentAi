@@ -18,15 +18,16 @@ async function sendMessage() {
   messageInput.value = "";
 
   try {
-    const response = await fetch("/.netlify/functions/chat", {
+    const response = await fetch("/api/chat", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ message: userMessage })
     });
 
     const data = await response.json();
-    const aiMessage = data.choices?.[0]?.message?.content || "No response from AI.";
-    appendMessage(aiMessage, 'bot');
+    appendMessage(data.reply, 'bot');
   } catch (err) {
     appendMessage("Error talking to AI: " + err.message, 'bot');
   }
