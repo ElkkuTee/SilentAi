@@ -2,6 +2,8 @@ const chat = document.getElementById("chat");
 const messageInput = document.getElementById("message");
 const sendBtn = document.getElementById("send");
 
+const BACKEND_URL = "https://silentai-backend.onrender.com";
+
 function appendMessage(text, sender) {
   const msg = document.createElement("div");
   msg.className = `message ${sender}`;
@@ -18,7 +20,7 @@ async function sendMessage() {
   messageInput.value = "";
 
   try {
-    const response = await fetch("/api/chat", {
+    const response = await fetch(BACKEND_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
